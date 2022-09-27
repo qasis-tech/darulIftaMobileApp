@@ -19,6 +19,9 @@ target 'darulIftaMobileApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'darulIftaMobileAppTests' do
     inherit! :complete
     # Pods for testing
