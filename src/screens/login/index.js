@@ -1,95 +1,57 @@
 import React from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-
+import { LoginStyles } from './login.styles';
 const Login = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
-    <View style={{backgroundColor: 'pink'}}>
+    <View style={LoginStyles.container}>
       {/* <Image
         source={require('./assets/blue.jpg')}
         style={{width: '100%', height: 130}}/> */}
       <Text
-        style={{
-          fontSize: 40,
-          textAlign: 'center',
-          marginTop: 80,
-          fontWeight: 'bold',
-          color: 'blue',
-          marginBottom: 2,
-          margin: 25,
-        }}>
+        style={LoginStyles.mainHeading}>
         DARUL IFTA
       </Text>
-      <Text style={{textAlign: 'center', color: 'blue'}}>
+      <Text style={LoginStyles.subHeading}>
         A Complete Solution For Islamic Queries
       </Text>
-      <Text style={{marginTop: 90, margin: 20}}>User Name</Text>
+      <Text style={LoginStyles.userName}>User Name</Text>
       <TextInput
         placeholder="UserName"
-        style={{
-          borderRadius: 4,
-          height: 50,
-          margin: 20,
-          marginTop: 2,
-          marginBottom: 5,
-          backgroundColor: '#f5f5f5',
-        }}
+        style={LoginStyles.userTextInput}
       />
-      <Text style={{marginTop: 20, margin: 20}}>Password</Text>
+      <Text style={LoginStyles.password}>Password</Text>
       <TextInput
         placeholder="Password"
-        style={{
-          borderRadius: 4,
-          height: 50,
-          margin: 20,
-          marginBottom: 5,
-          backgroundColor: '#f5f5f5',
-          marginTop: 2,
-        }}
+        style={LoginStyles.passwordTextInput}
       />
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={LoginStyles.viewContainer}>
         <CheckBox
           disabled={false}
           value={toggleCheckBox}
           onValueChange={newValue => setToggleCheckBox(newValue)}
         />
-        <Text style={{textAlign: 'left', marginLeft: 20, marginTop: 10}}>
+        <Text style={LoginStyles.rememberMe}>
           Remember me
         </Text>
-        <Text style={{textAlign: 'right', marginRight: 20, marginTop: 10}}>
+        <Text style={LoginStyles.forgetPassword}>
           Forget Password ?
         </Text>
       </View>
       <TouchableOpacity
-        style={{
-          marginRight: 20,
-          borderRadius: 10,
-          justifyContent: 'center',
-          marginLeft: 20,
-          marginTop: 20,
-          height: 45,
-          backgroundColor: 'green',
-        }}>
-        <Text style={{color: 'white', fontSize: 16, textAlign: 'center'}}>
+        style={LoginStyles.loginButton}>
+        <Text style={LoginStyles.loginText}>
           Login
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={{
-          marginRight: 20,
-          borderRadius: 10,
-          justifyContent: 'center',
-          marginLeft: 20,
-          marginTop: 20,
-          height: 45,
-          backgroundColor: 'white',
-        }}>
-        <Text style={{color: 'black', fontSize: 16, textAlign: 'center'}}>
+        style={LoginStyles.signInWithGoogle}>
+        <Text style={LoginStyles.signInWithGoogleText}>
           Sign in with Google
         </Text>
       </TouchableOpacity>
-      <Text style={{textAlign: 'center', marginTop: 20}}>
+      <Text style={LoginStyles.dontHaveAnAcc}>
         Don't have an account? Sign up
       </Text>
     </View>
